@@ -147,14 +147,6 @@ namespace ResumeScreenerFunctionApp
 
             await blobClient.UploadAsync(pdfStream, true);
             fileUploadAndNLPResponse.FilePath = filePath;
-
-            //using (MemoryStream memoryStream = new MemoryStream())
-            //{
-            //    await pdfStream.CopyToAsync(memoryStream);
-            //    memoryStream.Position = 0;
-            //    await blobClient.UploadAsync(memoryStream, true);
-            //    fileUploadAndNLPResponse.FilePath = filePath;
-            //}
         }
 
         private static async Task<ResumeEntitiesResponse> GetResumeEntities(string document, bool isPersonTypeIncluded, bool isOrganizationIncluded, bool isLocationIncluded)
